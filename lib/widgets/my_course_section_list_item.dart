@@ -17,7 +17,7 @@ class MyCourseSectionListItem extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
           width: double.infinity,
           decoration: BoxDecoration(
-            color: kSectionTileColor,
+            color: Colors.orange,
             boxShadow: [kDefaultShadow],
           ),
           child: Column(

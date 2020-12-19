@@ -261,7 +261,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
                                 text: 'Course Curriculam',
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                colors: Colors.black,
+                                colors: kBackgroundColor,
                               ),
                             ),
                             Padding(
@@ -283,7 +283,7 @@ class _CourseDetailScreenState extends State<CourseDetailScreen>
                                 right: 20, left: 20, top: 10, bottom: 10),
                             child: Card(
                               elevation: 4,
-                              color: Colors.black,
+                              color: kBackgroundColor,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),

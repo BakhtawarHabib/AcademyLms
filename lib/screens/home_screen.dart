@@ -95,6 +95,16 @@ class _HomeScreenState extends State<HomeScreen> {
             ));
   }
 
+  Future<void> secureScreen() async {
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  }
+
+  @override
+  void initState() {
+    secureScreen();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     // final catData = Provider.of<Categories>(context, listen: false).items;

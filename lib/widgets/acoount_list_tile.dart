@@ -50,7 +50,7 @@ class AccountListTile extends StatelessWidget {
       trailing: IconButton(
         icon: Icon(Icons.arrow_forward_ios),
         onPressed: () => _actionHandler(context),
-        color: Colors.grey,
+        color: Colors.white,
       ),
     );
   }

@@ -22,31 +22,26 @@ class LessonListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        _launchURL();
-      },
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-        child: RichText(
-          text: TextSpan(
-            children: [
-              WidgetSpan(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  child: Icon(
-                    getLessonIcon(lesson.lessonType),
-                    size: 16,
-                    color: kTextBlueColor,
-                  ),
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            WidgetSpan(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: Icon(
+                  getLessonIcon(lesson.lessonType),
+                  size: 16,
+                  color: kTextBlueColor,
                 ),
               ),
-              TextSpan(
-                  text: lesson.title,
-                  style: TextStyle(fontSize: 16, color: kTextBlueColor)),
-            ],
-          ),
+            ),
+            TextSpan(
+                text: lesson.title,
+                style: TextStyle(fontSize: 16, color: kTextBlueColor)),
+          ],
         ),
       ),
     );

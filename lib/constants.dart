@@ -8,7 +8,7 @@ const BASE_URL = 'https://onlineforcesacademylms.com/';
 const kBackgroundColor = Color(0xFF20836A); //White Background
 const kPrimaryColor = Color(0xFF035AA6);
 const kSecondaryColor = Color(0xFFF3FBFC);
-const kTextColor = Color(0xFF273242); //Black Color
+const kTextColor = Color(0xFF1B3253); //Black Color
 const kTextLightColor = Color(0xFF1B1B1B);
 const kBlueColor = Color(0xFF0E8B6C);
 const kLightBlueColor = Color(0xFFE7EEFE);
@@ -22,7 +22,7 @@ const kDarkButtonBg = Color(0xFF273546);
 const kTabBarBg = Color(0xFFEEEEEE);
 const kTextBlueColor = Color(0xFFF9F9FA);
 const kFormInputColor = Color(0xFFc7c8ca);
-const kSectionTileColor = Color(0xFFdddcdd);
+const kSectionTileColor = Color(0xFF20836A);
 
 const kDefaultPadding = 20.0;
 

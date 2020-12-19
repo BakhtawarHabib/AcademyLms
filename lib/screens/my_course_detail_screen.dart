@@ -72,13 +72,13 @@ class _MyCourseDetailScreenState extends State<MyCourseDetailScreen> {
     }
   }
 
-  void _showYoutubeModal(BuildContext ctx) {
+  void _showYoutubeModal(BuildContext ctx, String videoUrl1) {
     showModalBottomSheet(
       context: ctx,
       isScrollControlled: true,
       builder: (_) {
         return YoutubePlayerWidget(
-          videoUrl: _activeLesson.videoUrlWeb,
+          videoUrl: videoUrl1,
           newKey: UniqueKey(),
         );
       },
@@ -90,8 +90,9 @@ class _MyCourseDetailScreenState extends State<MyCourseDetailScreen> {
       if (lesson.videoTypeWeb == 'system' || lesson.videoTypeWeb == 'html5') {
         Navigator.of(context)
             .pushNamed(TempViewScreen.routeName, arguments: lesson.videoUrlWeb);
+        print(lesson);
       } else {
-        _showYoutubeModal(context);
+        _showYoutubeModal(context, _activeLesson.videoUrl);
       }
     } else if (lesson.lessonType == 'quiz') {
       final _url = BASE_URL + '/home/quiz_mobile_web_view/${lesson.id}';
@@ -210,7 +211,7 @@ class _MyCourseDetailScreenState extends State<MyCourseDetailScreen> {
                                     CourseDetailScreen.routeName,
                                     arguments: myLoadedCourse.id);
                               } else {
-                                Share.share(myLoadedCourse.shareableLink);
+                                // Share.share(myLoadedCourse.shareableLink);
                               }
                             },
                             icon: Icon(
@@ -220,10 +221,6 @@ class _MyCourseDetailScreenState extends State<MyCourseDetailScreen> {
                                   PopupMenuItem(
                                     child: Text('Course Details'),
                                     value: 'details',
-                                  ),
-                                  PopupMenuItem(
-                                    child: Text('Share this Course'),
-                                    value: 'share',
                                   ),
                                 ]),
                       )

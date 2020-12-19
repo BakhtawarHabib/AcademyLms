@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import '../widgets/video_player_widget.dart';
 import '../constants.dart';
 
-class TempViewScreen extends StatelessWidget {
+class TempViewScreen extends StatefulWidget {
   static const routeName = '/temp-view';
 
+  @override
+  _TempViewScreenState createState() => _TempViewScreenState();
+}
+
+class _TempViewScreenState extends State<TempViewScreen> {
   @override
   Widget build(BuildContext context) {
     final videoUrl = ModalRoute.of(context).settings.arguments as String;

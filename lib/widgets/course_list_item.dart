@@ -88,7 +88,7 @@ class CourseListItem extends StatelessWidget {
                             ),
                             unfilledStar: Icon(
                               Icons.star,
-                              color: Colors.grey,
+                              color: Colors.white,
                               size: 15,
                             ),
                           ),
@@ -108,7 +108,7 @@ class CourseListItem extends StatelessWidget {
                           child: Text(
                             '( $noOfRating )',
                             style: TextStyle(
-                              color: Colors.grey,
+                              color: Colors.white,
                               fontSize: 12,
                             ),
                           ),
