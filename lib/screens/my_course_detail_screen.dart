@@ -102,6 +102,7 @@ class _MyCourseDetailScreenState extends State<MyCourseDetailScreen> {
         final _url = lesson.attachment;
         Navigator.of(context)
             .pushNamed(WebviewScreenIframe.routeName, arguments: _url);
+        print("ok" + _url);
       } else {
         final _url = lesson.attachmentUrl;
         Navigator.of(context)

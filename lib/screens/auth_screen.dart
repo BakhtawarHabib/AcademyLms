@@ -165,6 +165,14 @@ class _AuthCardState extends State<AuthCard> {
             });
   }
 
+  bool _canShowButton = true;
+
+  void hideWidget() {
+    setState(() {
+      _canShowButton = !_canShowButton;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
@@ -222,27 +230,30 @@ class _AuthCardState extends State<AuthCard> {
               if (_isLoading)
                 CircularProgressIndicator()
               else
-                ButtonTheme(
-                  minWidth: deviceSize.width * 0.8,
-                  child: RaisedButton(
-                    child: Text(
-                      'Sign In',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: () {
-                      addCheckSignup();
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7.0),
-                      side: BorderSide(color: kBlueColor),
-                    ),
-                    splashColor: Colors.blueAccent,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 50.0, vertical: 20),
-                    color: kBlueColor,
-                    textColor: Colors.white,
-                  ),
-                ),
+                !_canShowButton
+                    ? const SizedBox.shrink()
+                    : ButtonTheme(
+                        minWidth: deviceSize.width * 0.8,
+                        child: RaisedButton(
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          onPressed: () {
+                            hideWidget();
+                            addCheckSignup();
+                          },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7.0),
+                            side: BorderSide(color: kBlueColor),
+                          ),
+                          splashColor: Colors.blueAccent,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 50.0, vertical: 20),
+                          color: kBlueColor,
+                          textColor: Colors.white,
+                        ),
+                      ),
               SizedBox(
                 height: 20,
               ),
